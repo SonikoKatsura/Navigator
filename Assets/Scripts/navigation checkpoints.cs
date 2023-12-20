@@ -15,16 +15,19 @@ public class navigationcheckpoints : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        GetComponent<NavMeshAgent>().autoTraverseOffMeshLink = false;
+        {
+            GetComponent<NavMeshAgent>().autoTraverseOffMeshLink = false;
 
-        destination = routeFather.GetChild(indexChildren).position;
-        GetComponent<NavMeshAgent>().SetDestination(destination);
-    }
+            destination = routeFather.GetChild(indexChildren).position;
+            GetComponent<NavMeshAgent>().SetDestination(destination);
+            AudioManager.instance.PlayMusic("Car");
+        }
 
     // Update is called once per frame
     void Update()
     {
+
+
         if (Vector3.Distance(transform.position, destination) < 0.5f)
         {
             indexChildren++;
@@ -42,6 +45,7 @@ public class navigationcheckpoints : MonoBehaviour
         {
             FaceTarget(GetComponent<NavMeshAgent>().currentOffMeshLinkData.endPos);
         }
+
     }
 
 
@@ -56,6 +60,7 @@ public class navigationcheckpoints : MonoBehaviour
 
     private void PerformJump(NavMeshLink link, Spline spline)
     {
+        AudioManager.instance.PlaySFX("Jump");
         bool reverseDirection = CheckIfJumpingFromEndToStart(link);
         StartCoroutine(MoveOnOffMeshLink(spline, reverseDirection));
 

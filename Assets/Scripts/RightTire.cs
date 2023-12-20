@@ -13,7 +13,7 @@ public class RightTire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = Mathf.PingPong(t: Time.time, length: 1f);
+        float x = Mathf.PingPong(t: Time.time, length: 10f);
         Vector3 axis = new Vector3(x, y: 0, z: 0);
         this.transform.Rotate(axis, angle: 1f);
     }
