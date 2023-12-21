@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -21,18 +23,17 @@ public class navigationcheckpoints : MonoBehaviour
             destination = routeFather.GetChild(indexChildren).position;
             GetComponent<NavMeshAgent>().SetDestination(destination);
             AudioManager.instance.PlayMusic("Car");
-        }
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-
-
         if (Vector3.Distance(transform.position, destination) < 0.5f)
         {
             indexChildren++;
             if (indexChildren >= routeFather.childCount)
-                indexChildren = 0;
+            indexChildren = 0;
             destination = routeFather.GetChild(indexChildren).position;
             GetComponent <NavMeshAgent>().SetDestination(destination);
         }
@@ -47,7 +48,6 @@ public class navigationcheckpoints : MonoBehaviour
         }
 
     }
-
 
     private void StartNavMeshLinkMovement()
     {
