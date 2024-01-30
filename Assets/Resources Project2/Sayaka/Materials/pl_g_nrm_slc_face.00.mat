@@ -252,7 +252,7 @@ Material:
     - _SSSDist: 1
     - _SSSIntensity: 1
     - _SSSPow: 1
-    - _ShadowBorderRange: 0.979
+    - _ShadowBorderRange: 0
     - _ShiftHue: 0
     - _ShiftSaturation: 1
     - _ShiftValue: 1
