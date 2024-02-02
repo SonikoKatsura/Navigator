@@ -87,7 +87,7 @@ Material:
     - _FoamDensity: 0.5
     - _FoamDistortion: 0.147
     - _FoamMax: 0
-    - _FoamMin: 0.49
+    - _FoamMin: 0.17
     - _FoamScrollSpeed: 1
     - _GlossMapScale: 1
     - _Glossiness: 1
