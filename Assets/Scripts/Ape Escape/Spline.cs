@@ -10,7 +10,7 @@ public class Spline : MonoBehaviour
     [SerializeField]
     private bool showGizmos = true;
 
-    private Vector3 CalculatePosition(float value01, Vector3 startPos, 
+    private Vector3 CalculatePosition(float value01, Vector3 startPos,
         Vector3 endPos, Vector3 midPos)
     {
         value01 = Mathf.Clamp01(value01);
@@ -23,17 +23,17 @@ public class Spline : MonoBehaviour
         => CalculatePosition(interpolationAmount01,
             _start.position, _end.position, _middle.position);
 
-    public Vector3 CalculatePositionCustomStart(float interpolationAmount01, 
+    public Vector3 CalculatePositionCustomStart(float interpolationAmount01,
         Vector3 startPosition)
     => CalculatePosition(interpolationAmount01,
             startPosition, _end.position, _middle.position);
 
-    public Vector3 CalculatePositionCustomEnd(float interpolationAmount01, 
+    public Vector3 CalculatePositionCustomEnd(float interpolationAmount01,
         Vector3 endPosition)
     => CalculatePosition(interpolationAmount01,
             _start.position, endPosition, _middle.position);
 
-    public void SetPoints(Vector3 startPoint, Vector3 midPointPosition, 
+    public void SetPoints(Vector3 startPoint, Vector3 midPointPosition,
         Vector3 endPoint)
     {
         if (_start != null && _middle != null && _end != null)
@@ -55,11 +55,11 @@ public class Spline : MonoBehaviour
             int granularity = 5;
             for (int i = 0; i < granularity; i++)
             {
-                Vector3 startPoint = 
-                    i == 0 ? _start.position 
+                Vector3 startPoint =
+                    i == 0 ? _start.position
                     : CalculatePosition(i / (float)granularity);
-                Vector3 endPoint = 
-                    i == granularity ? _end.position 
+                Vector3 endPoint =
+                    i == granularity ? _end.position
                     : CalculatePosition((i + 1) / (float)granularity);
                 Gizmos.DrawLine(startPoint, endPoint);
             }

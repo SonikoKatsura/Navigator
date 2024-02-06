@@ -95,7 +95,7 @@ Material:
     - _IgnoreDepthBuffer: 0
     - _IgnoreUVs: 1
     - _IgnoreVertexColour: 0
-    - _Metallic: 0
+    - _Metallic: 0.338
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
